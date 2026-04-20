@@ -9,62 +9,163 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: "Arial", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-      background: linear-gradient(180deg, #eef4ff 0%, #f8fbff 45%, #ffffff 100%);
+      background:
+        radial-gradient(circle at top right, rgba(59,130,246,0.10), transparent 24%),
+        linear-gradient(180deg, #f4f8ff 0%, #f8fbff 40%, #ffffff 100%);
       color: #1f2937;
     }
 
+    a {
+      text-decoration: none;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,0.82);
+      border-bottom: 1px solid rgba(220,230,245,0.9);
+    }
+
+    .topbar-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 17px;
+      font-weight: 800;
+      color: #123b77;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      color: #355070;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 8px 10px;
+      border-radius: 999px;
+      transition: all 0.2s ease;
+    }
+
+    .nav a:hover {
+      background: #edf4ff;
+      color: #0f4d98;
+    }
+
     .hero {
-      background: linear-gradient(135deg, #0d47a1 0%, #1565c0 45%, #1e88e5 100%);
+      background:
+        linear-gradient(135deg, rgba(7,49,112,0.94) 0%, rgba(19,92,179,0.94) 50%, rgba(47,128,237,0.90) 100%);
       color: #fff;
-      padding: 70px 20px 60px;
+      padding: 72px 20px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -120px -120px auto;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(255,255,255,0.18), transparent 65%);
+      pointer-events: none;
     }
 
     .hero-inner {
-      max-width: 1100px;
+      max-width: 1160px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 36px;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 44px;
       align-items: center;
+      position: relative;
+      z-index: 1;
     }
 
     .badge {
       display: inline-block;
-      padding: 8px 14px;
+      padding: 9px 15px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.16);
-      border: 1px solid rgba(255,255,255,0.25);
-      font-size: 14px;
-      font-weight: 700;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      font-size: 13px;
+      font-weight: 800;
       margin-bottom: 18px;
+      letter-spacing: 0.02em;
     }
 
     .hero h1 {
-      margin: 0 0 18px;
-      font-size: 44px;
-      line-height: 1.28;
-      letter-spacing: -0.02em;
+      margin: 0 0 20px;
+      font-size: 46px;
+      line-height: 1.24;
+      letter-spacing: -0.03em;
+      font-weight: 800;
     }
 
     .hero p {
       margin: 0 0 14px;
       font-size: 18px;
-      line-height: 1.8;
+      line-height: 1.85;
       color: rgba(255,255,255,0.92);
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+
+    .hero-chip {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 14px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 280px;
     }
 
     .hero-image {
       width: 100%;
+      max-width: 420px;
       display: block;
-      border-radius: 0;
       background: transparent;
+      filter: drop-shadow(0 10px 30px rgba(0,0,0,0.18));
     }
 
     .quick-info {
-      max-width: 1100px;
+      max-width: 1160px;
       margin: -34px auto 0;
       padding: 0 20px;
       position: relative;
@@ -78,53 +179,57 @@
     }
 
     .quick-card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 22px 20px;
-      box-shadow: 0 10px 28px rgba(19, 54, 105, 0.10);
-      border: 1px solid #e7eefb;
+      background: rgba(255,255,255,0.96);
+      border-radius: 22px;
+      padding: 24px 22px;
+      box-shadow: 0 16px 36px rgba(23, 54, 102, 0.10);
+      border: 1px solid #e6eefb;
     }
 
     .quick-card .label {
-      font-size: 13px;
+      font-size: 12px;
       color: #5b6b85;
       margin-bottom: 8px;
-      font-weight: 700;
+      font-weight: 800;
+      letter-spacing: 0.04em;
     }
 
     .quick-card .value {
       font-size: 18px;
       color: #15396b;
-      line-height: 1.6;
-      font-weight: 700;
+      line-height: 1.65;
+      font-weight: 800;
+      letter-spacing: -0.01em;
     }
 
     .wrap {
-      max-width: 1100px;
+      max-width: 1160px;
       margin: 0 auto;
-      padding: 50px 20px 80px;
+      padding: 56px 20px 88px;
     }
 
     .section {
-      margin-top: 34px;
-      background: #fff;
-      border-radius: 24px;
-      padding: 34px 32px;
-      box-shadow: 0 10px 26px rgba(16, 35, 70, 0.06);
-      border: 1px solid #ebf1fb;
+      scroll-margin-top: 90px;
+      margin-top: 30px;
+      background: rgba(255,255,255,0.96);
+      border-radius: 28px;
+      padding: 38px 34px;
+      box-shadow: 0 14px 34px rgba(16, 35, 70, 0.06);
+      border: 1px solid #eaf0fa;
     }
 
     .section h2 {
       margin: 0 0 18px;
-      font-size: 28px;
+      font-size: 30px;
       color: #123b77;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.03em;
+      font-weight: 800;
     }
 
     .section p,
     .section li {
       font-size: 17px;
-      line-height: 1.85;
+      line-height: 1.9;
       color: #334155;
     }
 
@@ -133,16 +238,45 @@
       padding-left: 22px;
     }
 
-    .highlight {
-      background: linear-gradient(135deg, #edf5ff 0%, #f7fbff 100%);
+    .lead-box {
+      background: linear-gradient(135deg, #edf5ff 0%, #f8fbff 100%);
+      border: 1px solid #dbe9ff;
       border-left: 6px solid #1565c0;
-      border-radius: 18px;
-      padding: 22px 24px;
-      margin-top: 22px;
+      border-radius: 20px;
+      padding: 24px 24px;
+      margin-top: 24px;
       font-size: 17px;
-      line-height: 1.85;
+      line-height: 1.9;
       color: #23446f;
-      font-weight: 600;
+      font-weight: 700;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px 20px;
+      margin-top: 10px;
+    }
+
+    .overview-item {
+      background: #f8fbff;
+      border: 1px solid #e2ebf9;
+      border-radius: 18px;
+      padding: 18px 18px;
+    }
+
+    .overview-item .k {
+      font-size: 13px;
+      font-weight: 800;
+      color: #5b6b85;
+      margin-bottom: 6px;
+    }
+
+    .overview-item .v {
+      font-size: 17px;
+      line-height: 1.75;
+      color: #183b6c;
+      font-weight: 700;
     }
 
     .program-list {
@@ -153,32 +287,46 @@
     }
 
     .program-card {
-      background: #f8fbff;
+      background: linear-gradient(180deg, #fbfdff 0%, #f6faff 100%);
       border: 1px solid #e0eaf8;
-      border-radius: 18px;
-      padding: 22px 20px;
+      border-radius: 22px;
+      padding: 24px 22px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
     }
 
     .program-card h3 {
       margin: 0 0 12px;
       font-size: 20px;
       color: #0f4d98;
+      font-weight: 800;
+      letter-spacing: -0.02em;
     }
 
     .program-card p {
       margin: 0;
       font-size: 16px;
-      line-height: 1.8;
+      line-height: 1.85;
+      color: #40556f;
     }
 
-    .section a {
-      color: #1565c0;
-      text-decoration: none;
-      font-weight: 700;
+    .contact-box {
+      background: linear-gradient(135deg, #0f4d98 0%, #1d67c1 100%);
+      color: #fff;
+      border-radius: 24px;
+      padding: 26px 24px;
+      margin-top: 10px;
     }
 
-    .section a:hover {
+    .contact-box p {
+      margin: 0 0 10px;
+      color: rgba(255,255,255,0.96);
+    }
+
+    .contact-box a {
+      color: #ffffff;
+      font-weight: 800;
       text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
     .footer {
@@ -186,31 +334,56 @@
       text-align: center;
       color: #6b7280;
       font-size: 15px;
-      padding-bottom: 20px;
+      padding-bottom: 18px;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 980px) {
       .hero-inner,
+      .quick-grid,
       .program-list,
-      .quick-grid {
+      .overview-grid {
         grid-template-columns: 1fr;
       }
 
       .hero h1 {
-        font-size: 32px;
+        font-size: 34px;
       }
 
       .section {
-        padding: 26px 20px;
+        padding: 28px 22px;
       }
 
       .quick-info {
-        margin-top: -24px;
+        margin-top: -22px;
+      }
+
+      .topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 8px;
       }
     }
   </style>
 </head>
 <body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">2026 한·중(웨이하이) 의료기기 산업 협력 기회 매칭회</div>
+      <nav class="nav">
+        <a href="#intro">행사 소개</a>
+        <a href="#wego">위고그룹 소개</a>
+        <a href="#overview">행사 개요</a>
+        <a href="#program">주요 프로그램</a>
+        <a href="#contact">문의</a>
+      </nav>
+    </div>
+  </header>
+
   <section class="hero">
     <div class="hero-inner">
       <div>
@@ -224,9 +397,15 @@
           본 행사는 중국 핵심 의료기기 산업 클러스터에서 한국 기업의 중국 시장 진출,
           현지 파트너 발굴, 산업 협력 및 유통 연계를 실질적으로 지원하기 위해 마련되었습니다.
         </p>
+
+        <div class="hero-meta">
+          <div class="hero-chip">2026.5.7.(목) ~ 5.10.(일)</div>
+          <div class="hero-chip">중국 산둥성 웨이하이시</div>
+          <div class="hero-chip">WEGO HALL</div>
+        </div>
       </div>
 
-      <div>
+      <div class="hero-visual">
         <img src="ckmdm logo.png" alt="2026 한·중(웨이하이) 의료기기 산업 협력 기회 매칭회 대표 이미지" class="hero-image">
       </div>
     </div>
@@ -254,7 +433,7 @@
   </div>
 
   <main class="wrap">
-    <section class="section">
+    <section class="section" id="intro">
       <h2>행사 소개</h2>
       <p>
         이번 행사에서는 의료기기용 신소재 기업과 가정용 의료기기, 디지털 헬스케어 및 개인 건강관리 기기 등
@@ -265,13 +444,13 @@
         중국 핵심 의료산업 클러스터와 전략적 파트너십을 구축할 수 있는 실질적 기회입니다.
       </p>
 
-      <div class="highlight">
+      <div class="lead-box">
         중국 시장 진출을 본격화하려는 기업이라면 반드시 주목해야 할 자리로,
         현지 파트너 발굴, 산업 협력, 유통 연계, 투자 연계까지 폭넓은 기회를 기대할 수 있습니다.
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="wego">
       <h2>위고그룹(WEGO Group) 소개</h2>
       <ul>
         <li>1988년 설립된 중국 산둥성 웨이하이 소재의 중국 최대 종합 의료기기 그룹 중 하나로, 약 3만 명 이상의 임직원과 80개 이상의 자회사를 보유하고 있습니다.</li>
@@ -281,20 +460,41 @@
       </ul>
     </section>
 
-    <section class="section">
+    <section class="section" id="overview">
       <h2>행사 개요</h2>
-      <ul>
-        <li><strong>행 사 명 :</strong> 2026 한중(웨이하이) 의료기기 산업 협력 기회 매칭회</li>
-        <li><strong>주 제 :</strong> 역량강화·기회·미래</li>
-        <li><strong>기 간 :</strong> 2026.5.7.(목) ~ 5.10.(일), 3박4일</li>
-        <li><strong>장 소 :</strong> 중국 산둥성 웨이하이시 (웨이하이웨이 호텔 3F, WEGO HALL)</li>
-        <li><strong>지도기관 :</strong> 중국 산둥성 웨이하이시 상무국</li>
-        <li><strong>주 최 :</strong> 위고그룹(WEGO Group), 한중과학기술서비스협회</li>
-        <li><strong>주 관 :</strong> (재)오송첨단의료산업진흥재단, (재)전남창조경제혁신센터, (사)광주전남벤처기업협회</li>
-      </ul>
+      <div class="overview-grid">
+        <div class="overview-item">
+          <div class="k">행 사 명</div>
+          <div class="v">2026 한중(웨이하이) 의료기기 산업 협력 기회 매칭회</div>
+        </div>
+        <div class="overview-item">
+          <div class="k">주 제</div>
+          <div class="v">역량강화 · 기회 · 미래</div>
+        </div>
+        <div class="overview-item">
+          <div class="k">기 간</div>
+          <div class="v">2026.5.7.(목) ~ 5.10.(일), 3박 4일</div>
+        </div>
+        <div class="overview-item">
+          <div class="k">장 소</div>
+          <div class="v">중국 산둥성 웨이하이시<br>웨이하이웨이 호텔 3F, WEGO HALL</div>
+        </div>
+        <div class="overview-item">
+          <div class="k">지도기관</div>
+          <div class="v">중국 산둥성 웨이하이시 상무국</div>
+        </div>
+        <div class="overview-item">
+          <div class="k">주 최</div>
+          <div class="v">위고그룹(WEGO Group), 한중과학기술서비스협회</div>
+        </div>
+        <div class="overview-item" style="grid-column: 1 / -1;">
+          <div class="k">주 관</div>
+          <div class="v">(재)오송첨단의료산업진흥재단, (재)전남창조경제혁신센터, (사)광주전남벤처기업협회</div>
+        </div>
+      </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="program">
       <h2>주요 프로그램</h2>
       <div class="program-list">
         <div class="program-card">
@@ -331,10 +531,12 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="contact">
       <h2>문의</h2>
-      <p>한중과학기술서비스협회</p>
-      <p>이메일: <a href="mailto:c-kic@naver.com">c-kic@naver.com</a></p>
+      <div class="contact-box">
+        <p><strong>한중과학기술서비스협회</strong></p>
+        <p>이메일: <a href="mailto:c-kic@naver.com">c-kic@naver.com</a></p>
+      </div>
     </section>
 
     <div class="footer">
