@@ -5,148 +5,339 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>2026 한·중(웨이하이) 의료기기 산업협력 기회 매칭회</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f7f9fc;
-      color: #222;
+      font-family: "Arial", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      background: linear-gradient(180deg, #eef4ff 0%, #f8fbff 45%, #ffffff 100%);
+      color: #1f2937;
     }
-    .wrap {
-      max-width: 980px;
+
+    .hero {
+      background: linear-gradient(135deg, #0d47a1 0%, #1565c0 45%, #1e88e5 100%);
+      color: #fff;
+      padding: 70px 20px 60px;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 60px 20px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      align-items: center;
     }
-    .card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-    }
-    h1 {
-      font-size: 32px;
-      margin-bottom: 16px;
-      line-height: 1.4;
-    }
-    h2 {
-      font-size: 22px;
-      margin-top: 36px;
-      margin-bottom: 14px;
-      color: #1a4fa3;
-    }
-    p, li {
-      font-size: 17px;
-      line-height: 1.8;
-    }
-    ul {
-      padding-left: 22px;
-      margin-top: 8px;
-    }
+
     .badge {
       display: inline-block;
-      background: #e8f1ff;
-      color: #1a4fa3;
       padding: 8px 14px;
       border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.25);
       font-size: 14px;
-      margin-bottom: 20px;
+      font-weight: 700;
+      margin-bottom: 18px;
     }
+
+    .hero h1 {
+      margin: 0 0 18px;
+      font-size: 44px;
+      line-height: 1.28;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      margin: 0 0 14px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .hero-image-box {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 24px;
+      padding: 16px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+      backdrop-filter: blur(6px);
+    }
+
     .hero-image {
       width: 100%;
-      max-width: 900px;
-      height: auto;
-      border-radius: 12px;
-      margin: 20px 0 30px 0;
       display: block;
+      border-radius: 18px;
+      background: #fff;
     }
+
+    .quick-info {
+      max-width: 1100px;
+      margin: -34px auto 0;
+      padding: 0 20px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .quick-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 22px 20px;
+      box-shadow: 0 10px 28px rgba(19, 54, 105, 0.10);
+      border: 1px solid #e7eefb;
+    }
+
+    .quick-card .label {
+      font-size: 13px;
+      color: #5b6b85;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .quick-card .value {
+      font-size: 18px;
+      color: #15396b;
+      line-height: 1.6;
+      font-weight: 700;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 50px 20px 80px;
+    }
+
     .section {
-      margin-top: 28px;
+      margin-top: 34px;
+      background: #fff;
+      border-radius: 24px;
+      padding: 34px 32px;
+      box-shadow: 0 10px 26px rgba(16, 35, 70, 0.06);
+      border: 1px solid #ebf1fb;
     }
+
+    .section h2 {
+      margin: 0 0 18px;
+      font-size: 28px;
+      color: #123b77;
+      letter-spacing: -0.02em;
+    }
+
+    .section p,
+    .section li {
+      font-size: 17px;
+      line-height: 1.85;
+      color: #334155;
+    }
+
+    .section ul {
+      margin: 0;
+      padding-left: 22px;
+    }
+
     .highlight {
-      background: #f3f7ff;
-      border-left: 5px solid #1a4fa3;
-      padding: 18px 20px;
-      border-radius: 10px;
-      margin: 24px 0;
+      background: linear-gradient(135deg, #edf5ff 0%, #f7fbff 100%);
+      border-left: 6px solid #1565c0;
+      border-radius: 18px;
+      padding: 22px 24px;
+      margin-top: 22px;
+      font-size: 17px;
+      line-height: 1.85;
+      color: #23446f;
+      font-weight: 600;
+    }
+
+    .program-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 12px;
+    }
+
+    .program-card {
+      background: #f8fbff;
+      border: 1px solid #e0eaf8;
+      border-radius: 18px;
+      padding: 22px 20px;
+    }
+
+    .program-card h3 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      color: #0f4d98;
+    }
+
+    .program-card p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .footer {
+      margin-top: 34px;
+      text-align: center;
+      color: #6b7280;
+      font-size: 15px;
+      padding-bottom: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner,
+      .program-list,
+      .quick-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .section {
+        padding: 26px 20px;
+      }
+
+      .quick-info {
+        margin-top: -24px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
-      <div class="badge">공식 안내 페이지</div>
-
-      <h1>2026 한·중(웨이하이) 의료기기 산업협력 기회 매칭회</h1>
-
-      <img src="ckmdm logo.png" alt="2026 한·중(웨이하이) 의료기기 산업협력 기회 매칭회 대표 이미지" class="hero-image">
-
-      <p>
-        중국 산둥성 웨이하이시 상무국과 중국 대표 의료기기 기업 위고그룹(WEGO), 한중과학기술서비스협회가 공동 추진하는 공식 한·중 의료산업 협력 프로그램입니다.
-      </p>
-      <p>
-        본 행사는 중국 핵심 의료기기 산업 클러스터에서 한국 기업의 중국 시장 진출, 현지 파트너 발굴, 산업 협력 및 유통 연계를 실질적으로 지원하기 위해 마련되었습니다.
-        이번 행사에서는 의료기기용 신소재 기업과 가정용 의료기기, 디지털 헬스케어 및 개인 건강관리 기기 등 가정·개인 헬스케어 분야 기업이 참여합니다.
-      </p>
-
-      <div class="highlight">
-        글로벌 의료기기 선도기업 위고그룹과의 직접 협력 및 사업 연계가 가능한 공식 매칭 프로그램으로,
-        중국 핵심 의료산업 클러스터와 전략적 파트너십을 구축할 수 있는 실질적 기회입니다.
-        중국 시장 진출을 본격화하려는 기업이라면 반드시 주목해야 할 자리로, 역량 있는 기업들의 적극적인 활동을 기대합니다.
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="badge">공식 안내 페이지</div>
+        <h1>2026 한·중(웨이하이)<br>의료기기 산업 협력 기회 매칭회</h1>
+        <p>
+          중국 산둥성 웨이하이시 상무국과 중국 대표 의료기기 기업 위고그룹(WEGO),
+          한중과학기술서비스협회가 공동 추진하는 공식 한·중 의료산업 협력 프로그램입니다.
+        </p>
+        <p>
+          중국 핵심 의료기기 산업 클러스터에서 한국 기업의 중국 시장 진출,
+          현지 파트너 발굴, 산업 협력 및 유통 연계를 실질적으로 지원하기 위해 마련되었습니다.
+        </p>
       </div>
 
-      <div class="section">
-        <h2>▣ 위고그룹(WEGO Group) 소개</h2>
-        <ul>
-          <li>위고그룹(WEGO Group)은 1988년 설립된 중국 산둥성 웨이하이 소재의 중국 최대 종합 의료기기 그룹 중 하나로, 약 3만 명 이상의 임직원과 80개 이상의 자회사를 보유하고 있습니다.</li>
-          <li>정형외과, 혈액투석, 수술장비, 의료소모품, 디지털 헬스케어 등 의료 전 분야를 포괄하며, 기초 소모품부터 고급 의료기기까지 아우르는 종합 사업 구조를 갖추고 있습니다.</li>
-          <li>1,300건 이상의 특허와 다수의 CE·FDA 인증을 보유하고 있고, 자체 개발 수술로봇으로 중국 최초의 260km 양자 원격 수술을 성공시키는 등 기술 혁신을 선도하고 있습니다.</li>
-          <li>현재 100여 개국에 제품을 수출하며 글로벌 유통망을 구축하고 있어, 단순 거래를 넘어 공동개발·생산·시장 진출이 가능한 전략적 협력 파트너로 평가받고 있습니다.</li>
-        </ul>
+      <div class="hero-image-box">
+        <img src="ckmdm logo.png" alt="2026 한·중(웨이하이) 의료기기 산업 협력 기회 매칭회 대표 이미지" class="hero-image">
       </div>
+    </div>
+  </section>
 
-      <div class="section">
-        <h2>▣ 행사 개요</h2>
-        <ul>
-          <li><strong>행 사 명 :</strong> 2026 한중(웨이하이) 의료기기 산업 협력 기회 매칭회</li>
-          <li><strong>주 제 :</strong> 역량강화·기회·미래</li>
-          <li><strong>기 간 :</strong> 2026.5.7.(목) ~ 5.10.(일), 3박4일</li>
-          <li><strong>장 소 :</strong> 중국 산둥성 웨이하이시 (웨이하이웨이 호텔 3F, WEGO HALL)</li>
-          <li><strong>지도기관 :</strong> 중국 산둥성 웨이하이시 상무국</li>
-          <li><strong>주 최 :</strong> 위고그룹(WEGO Group), 한중과학기술서비스협회</li>
-          <li><strong>주 관 :</strong> (재)오송첨단의료산업진흥재단, (재)전남창조경제혁신센터, (사)광주전남벤처기업협회</li>
-        </ul>
+  <div class="quick-info">
+    <div class="quick-grid">
+      <div class="quick-card">
+        <div class="label">행사명</div>
+        <div class="value">2026 한중(웨이하이) 의료기기 산업 협력 기회 매칭회</div>
       </div>
-
-      <div class="section">
-        <h2>▣ 주요 프로그램</h2>
-        <ul>
-          <li>
-            <strong>참가기업 전시부스 운영</strong><br>
-            - 행사장 내 전시부스 설치를 통해 기업·제품·기술 홍보 기회 제공<br>
-            - 중국 정부·산업·기업·투자 관계자를 대상으로 현장 홍보 및 상담 진행
-          </li>
-          <li style="margin-top: 16px;">
-            <strong>IR 발표 기업 선발 및 투자 연계</strong><br>
-            - 참가기업 전원 3분 기업발표 진행<br>
-            - 참가기업 중 사전 검토를 통해 IR 발표 기업을 선발<br>
-            - 한·중 투자기관 및 산업 관계자를 대상으로 기업 IR 발표 기회 제공
-          </li>
-          <li style="margin-top: 16px;">
-            <strong>사전 검토 기반 1:1 목적형 매칭 상담회</strong><br>
-            - 참가기업의 기업·기술 정보를 사전에 검토<br>
-            - 중국 측 기업·기관과 협력 목적이 명확한 1:1 맞춤형 비즈니스 상담 진행
-          </li>
-          <li style="margin-top: 16px;">
-            <strong>중국 시장 진출·협력 종합 컨설팅</strong><br>
-            - 의료기기 인증·허가, 정책 지원, 투자 연계, 현지 법인·지사 설립 관련 현장 상담 제공
-          </li>
-        </ul>
+      <div class="quick-card">
+        <div class="label">주제</div>
+        <div class="value">역량강화 · 기회 · 미래</div>
       </div>
-
-      <div class="section">
-        <h2>▣ 문의</h2>
-        <p>한중과학기술서비스협회</p>
+      <div class="quick-card">
+        <div class="label">기간</div>
+        <div class="value">2026.5.7.(목) ~ 5.10.(일)<br>3박 4일</div>
+      </div>
+      <div class="quick-card">
+        <div class="label">장소</div>
+        <div class="value">중국 산둥성 웨이하이시<br>웨이하이웨이 호텔 3F, WEGO HALL</div>
       </div>
     </div>
   </div>
+
+  <main class="wrap">
+    <section class="section">
+      <h2>행사 소개</h2>
+      <p>
+        본 행사는 의료기기용 신소재 기업과 가정용 의료기기, 디지털 헬스케어 및 개인 건강관리 기기 등
+        가정·개인 헬스케어 분야 기업이 참여하는 한·중 산업 협력 프로그램입니다.
+      </p>
+      <p>
+        글로벌 의료기기 선도기업 위고그룹과의 직접 협력 및 사업 연계가 가능한 공식 매칭 프로그램으로,
+        중국 핵심 의료산업 클러스터와 전략적 파트너십을 구축할 수 있는 실질적 기회입니다.
+      </p>
+
+      <div class="highlight">
+        중국 시장 진출을 본격화하려는 기업이라면 반드시 주목해야 할 자리로,
+        현지 파트너 발굴, 산업 협력, 유통 연계, 투자 연계까지 폭넓은 기회를 기대할 수 있습니다.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>위고그룹(WEGO Group) 소개</h2>
+      <ul>
+        <li>1988년 설립된 중국 산둥성 웨이하이 소재의 중국 최대 종합 의료기기 그룹 중 하나로, 약 3만 명 이상의 임직원과 80개 이상의 자회사를 보유하고 있습니다.</li>
+        <li>정형외과, 혈액투석, 수술장비, 의료소모품, 디지털 헬스케어 등 의료 전 분야를 포괄하며, 기초 소모품부터 고급 의료기기까지 아우르는 종합 사업 구조를 갖추고 있습니다.</li>
+        <li>1,300건 이상의 특허와 다수의 CE·FDA 인증을 보유하고 있으며, 자체 개발 수술로봇으로 중국 최초의 260km 양자 원격 수술을 성공시키는 등 기술 혁신을 선도하고 있습니다.</li>
+        <li>현재 100여 개국에 제품을 수출하며 글로벌 유통망을 구축하고 있어, 공동개발·생산·시장 진출이 가능한 전략적 협력 파트너로 평가받고 있습니다.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>행사 개요</h2>
+      <ul>
+        <li><strong>행 사 명 :</strong> 2026 한중(웨이하이) 의료기기 산업 협력 기회 매칭회</li>
+        <li><strong>주 제 :</strong> 역량강화·기회·미래</li>
+        <li><strong>기 간 :</strong> 2026.5.7.(목) ~ 5.10.(일), 3박4일</li>
+        <li><strong>장 소 :</strong> 중국 산둥성 웨이하이시 (웨이하이웨이 호텔 3F, WEGO HALL)</li>
+        <li><strong>지도기관 :</strong> 중국 산둥성 웨이하이시 상무국</li>
+        <li><strong>주 최 :</strong> 위고그룹(WEGO Group), 한중과학기술서비스협회</li>
+        <li><strong>주 관 :</strong> (재)오송첨단의료산업진흥재단, (재)전남창조경제혁신센터, (사)광주전남벤처기업협회</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>주요 프로그램</h2>
+      <div class="program-list">
+        <div class="program-card">
+          <h3>참가기업 전시부스 운영</h3>
+          <p>
+            행사장 내 전시부스 설치를 통해 기업·제품·기술 홍보 기회를 제공하고,
+            중국 정부·산업·기업·투자 관계자를 대상으로 현장 홍보 및 상담을 진행합니다.
+          </p>
+        </div>
+
+        <div class="program-card">
+          <h3>IR 발표 기업 선발 및 투자 연계</h3>
+          <p>
+            참가기업 전원 3분 기업발표를 진행하며,
+            사전 검토를 통해 IR 발표 기업을 별도 선발하여 한·중 투자기관 및 산업 관계자 대상 발표 기회를 제공합니다.
+          </p>
+        </div>
+
+        <div class="program-card">
+          <h3>1:1 목적형 매칭 상담회</h3>
+          <p>
+            참가기업의 기업·기술 정보를 사전에 검토한 뒤,
+            중국 측 기업·기관과 협력 목적이 명확한 1:1 맞춤형 비즈니스 상담을 진행합니다.
+          </p>
+        </div>
+
+        <div class="program-card">
+          <h3>중국 시장 진출·협력 종합 컨설팅</h3>
+          <p>
+            의료기기 인증·허가, 정책 지원, 투자 연계,
+            현지 법인·지사 설립 관련 현장 상담을 통해 중국 진출 실무를 지원합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>문의</h2>
+      <p>한중과학기술서비스협회</p>
+    </section>
+
+    <div class="footer">
+      © 2026 韩中（威海）医疗器械产业合作机会对接会
+    </div>
+  </main>
 </body>
 </html>
